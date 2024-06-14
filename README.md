@@ -2,23 +2,40 @@
 
 Todo:
 
-[ ] Landing Page
+[x] Landing Page
+
     [ ] Hero
+
     [ ] Testimonials
+
     [ ] 
+
     [ ]
+
 [ ] Navbar
+
 [ ] Auth Pages
+
 [ ] OAuth 
+
 [ ] Credentials Login
+
 [ ] Two Factor Auth
+
 [ ] Magic Link Login
+
 [ ] OTP Login
+
 [ ] Stripe Payment
+
 [ ] 
+
 [ ]
+
 [ ]
+
 [ ]
+
 
 ## Why?
 
