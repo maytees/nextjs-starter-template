@@ -3,7 +3,7 @@
 ### Todo:
 
 - [ ] Landing Page
-    - [ ] Hero
+    - [x] Hero
     - [ ] Testimonials
     - [ ] Pricing
 
@@ -44,6 +44,17 @@ So, I've decided to create a template for myself, using my favorite tools/librar
 - React Email
 - Prisma
 - Postgres DB (external ofc)
+
+## What sets this apart from the others?
+
+I want this template to be set apart from the others in terms of customizability.
+Of course this is just a template and you can do whatever you would like with it -
+but sometimes I may want a product image on the hero section and sometimes I wouldn't,
+so I don't want to spend my time editing the Tailwind CSS in order to just add an image,
+it's a waste of time.
+
+***meaning***: the template landing page and dashboard will have options which you're able to 
+switch out to your liking. Does this hero not fit your product? Try Hero #2!
 
 You can use this if you'd like to, and contributions are welcome.
 
