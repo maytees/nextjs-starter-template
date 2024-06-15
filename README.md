@@ -1,41 +1,33 @@
 # NextJS Starter Template
 
-Todo:
+### Todo:
 
-[x] Landing Page
+- [ ] Landing Page
+    - [ ] Hero
+    - [ ] Testimonials
+    - [ ] Pricing
 
-    [ ] Hero
+- [ ] Navbar
 
-    [ ] Testimonials
+- [ ] Footer
 
-    [ ] 
+- [ ] Auth Pages
 
-    [ ]
+- [ ] OAuth 
 
-[ ] Navbar
+- [ ] Credentials Login
 
-[ ] Auth Pages
+- [ ] Two Factor Auth
 
-[ ] OAuth 
+- [ ] Magic Link Login
 
-[ ] Credentials Login
+- [ ] OTP Login
 
-[ ] Two Factor Auth
+- [ ] Stripe Payment
 
-[ ] Magic Link Login
+- [ ] Forgot Password
 
-[ ] OTP Login
-
-[ ] Stripe Payment
-
-[ ] 
-
-[ ]
-
-[ ]
-
-[ ]
-
+- [ ] Reset Password
 
 ## Why?
 
@@ -43,4 +35,16 @@ I've been building many projects lately (most of which I've given up on), and I'
 the time just buidling auth, and simple ui, relating to auth... then theres a 1% chance I even 
 get to the main functionality of the site, because I just get so sick of the auth flow. 
 
-So, I've decided to create a template for myself, using my favorite 
+So, I've decided to create a template for myself, using my favorite tools/libraries. These inlcude:
+
+- NextJS 14
+- Shadcn UI 
+- Stripe
+- Resend
+- React Email
+- Prisma
+- Postgres DB (external ofc)
+
+You can use this if you'd like to, and contributions are welcome.
+
+Thanks!
