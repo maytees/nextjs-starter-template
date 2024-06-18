@@ -27,7 +27,7 @@ const Hero = () => {
             <p className="text-lg font-normal text-center">
                 When starting on a project, many people like myself get stuck on the
                 annoying boilerplate: Authentication, Email, Database, Typesafety, Landing Page, and etc.
-                So use this template is meant for <span className='italic font-semibold'>saving time</span>
+                So this template is meant for <span className='italic font-semibold'>saving time</span>
             </p>
             <Button href="https://github.com/maytees/nextjs-starter-template" className="flex flex-row items-center gap-2" size={"lg"}>
                 <FaGithub size={20} />
