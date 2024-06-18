@@ -112,7 +112,7 @@ export default async function Component() {
             <header className="hidden lg:flex h-20 w-full shrink-0 items-center px-16 xl:px-52 mt-10 2xl:mt-16">
                 <Link href="/" className="flex items-center gap-2" prefetch={false}>
                     <MountainIcon />
-                    <span className="text-2xl text-primary font-bold">Starter</span>
+                    <span className="text-2xl text-primary font-bold">Acme</span>
                 </Link>
                 <nav className="ml-10 gap-10 text-md text-foreground font-medium flex">
                     <Link href="/" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
