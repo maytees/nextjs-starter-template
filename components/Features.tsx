@@ -12,7 +12,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const Features = () => {
     return (
-        <div id="features" className='flex flex-col gap-10 mt-52 mb-[100vh] 2xl:px-60'>
+        <div id="features" className='flex flex-col gap-10 mt-52 2xl:px-60'>
             <div className="flex flex-col">
                 <h1 className='text-2xl font-bold text-center'>Features</h1>
                 <h2 className='text-lg text-center'>What comes straight out of the box?</h2>
