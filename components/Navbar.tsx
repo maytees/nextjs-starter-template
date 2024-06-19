@@ -67,6 +67,12 @@ export default async function Component() {
                             Features
                         </Link>
                         <Link
+                            href="#faq"
+                            className="text-muted-foreground hover:text-foreground"
+                        >
+                            FAQ
+                        </Link>
+                        <Link
                             href="#pricing"
                             className="text-muted-foreground hover:text-foreground"
                         >
@@ -129,6 +135,9 @@ export default async function Component() {
                     </Link>
                     <Link href="#features" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
                         Features
+                    </Link>
+                    <Link href="#faq" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
+                        FAQ
                     </Link>
                     <Link href="#pricing" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
                         Pricing
