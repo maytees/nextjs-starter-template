@@ -55,6 +55,12 @@ export default async function Component() {
                             Home
                         </Link>
                         <Link
+                            href="#tools"
+                            className="text-muted-foreground hover:text-foreground"
+                        >
+                            Tools
+                        </Link>
+                        <Link
                             href="#features"
                             className="text-muted-foreground hover:text-foreground"
                         >
@@ -117,6 +123,9 @@ export default async function Component() {
                 <nav className="ml-10 gap-10 text-md text-foreground font-medium flex">
                     <Link href="/" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
                         Home
+                    </Link>
+                    <Link href="#tools" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
+                        Tools
                     </Link>
                     <Link href="#features" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
                         Features
