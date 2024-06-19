@@ -54,6 +54,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @layer base {
   * {
     @apply border-border;
