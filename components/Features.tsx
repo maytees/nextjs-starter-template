@@ -7,29 +7,29 @@ import Link from "next/link"
 import { ArrowRightIcon, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 
-const Specifications = () => {
+const Features = () => {
     return (
-        <div id="tools" className='flex flex-col gap-10 mt-96 2xl:px-60'>
+        <div id="features" className='flex flex-col gap-10 mt-96 mb-[100vh] 2xl:px-60'>
             <div className="flex flex-col">
                 <h1 className='text-2xl font-bold text-center'>Tools</h1>
                 <h2 className='text-lg text-center'>What tools are being used in this kit?</h2>
             </div>
 
             <div className="grid lg:grid-flow-row lg:grid-cols-2 lg:grid-rows-2 2xl:grid-cols-3 2xl:grid-rows-2 gap-20 lg:gap-10 mt-5 lg:mt-10">
-                <SpecCard
+                <FeatureCard
                     icon={<SiNextdotjs size={32} />}
                     title="NextJS 14"
                     description="NextJS 14 is a must have. It is the most popular and powerful framework for building full stack applications. Use server actions for backend logic, along with api routes for data fetching."
                     href="https://nextjs.org/"
                 />
-                <SpecCard
+                <FeatureCard
                     icon={<MdShield size={32} />}
                     title="Next Auth"
                     description="NextAuth JS allows you to easily handle authentication and authorization in your SaaS app.
                     This template comes out of the box with Magic link, OTP, Google, and Github authentication methods."
                     href='https://authjs.dev/'
                 />
-                <SpecCard
+                <FeatureCard
                     icon={<SiResend size={32} />}
                     title="Resend"
                     description="Resend is an easey to use mail service which is easily connected with NextAuth, to handle magic
@@ -37,7 +37,7 @@ const Specifications = () => {
                     href="https://resend.com/"
                 />
 
-                <SpecCard
+                <FeatureCard
                     icon={<FaStripeS size={32} />}
                     title="Stripe Payment"
                     description="Stripe providers seamless and secure payment processing, allowing you to easily accept
@@ -45,7 +45,7 @@ const Specifications = () => {
                     href="https://stripe.com/"
                 />
 
-                <SpecCard
+                <FeatureCard
                     icon={<SiTailwindcss size={32} />}
                     title="Tailwind CSS"
                     description="Tailwind CSS is a very powerful, I 
@@ -53,7 +53,7 @@ const Specifications = () => {
                     must have for modern SaaS projects, especially when paired with React."
                     href="https://tailwindcss.com/"
                 />
-                <SpecCard
+                <FeatureCard
                     icon={<SiShadcnui size={32} />}
                     title="Shadcn UI"
                     description="Certainly a must have. I have paired Shadcn UI with Magic UI, 
@@ -66,7 +66,7 @@ const Specifications = () => {
     )
 }
 
-const SpecCard = ({ icon, title, description, className, href }: { icon: React.ReactNode, title: string, description: string, className?: string, href?: string }) => {
+const FeatureCard = ({ icon, title, description, className, href }: { icon: React.ReactNode, title: string, description: string, className?: string, href?: string }) => {
     return (
         <div className={"flex flex-col justify-between min-h-64 " + className} >
             <div className="space-y-5">
@@ -90,4 +90,4 @@ const SpecCard = ({ icon, title, description, className, href }: { icon: React.R
     );
 }
 
-export default Specifications
+export default Features
