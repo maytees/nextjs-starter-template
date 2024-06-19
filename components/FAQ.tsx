@@ -32,7 +32,7 @@ const items: FAQItem[] = [
 
 const FAQ = () => {
     return (
-        <div id="faq" className='flex flex-col gap-10 mt-52 mb-[100vh] 2xl:px-60'>
+        <div id="faq" className='flex flex-col gap-10 mt-52 2xl:px-60'>
             <div className="flex flex-col">
                 <h1 className='text-2xl font-bold text-center'>FAQ</h1>
                 <h2 className='text-lg text-center'>What are some frequently asked questions which haven{"'"}t actually been asked?</h2>
