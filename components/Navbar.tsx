@@ -121,7 +121,7 @@ export default async function Component() {
                     </div>}
                 </SheetContent>
             </Sheet>
-            <header className="hidden lg:flex h-20 w-full shrink-0 items-center px-16 xl:px-52 mt-10 2xl:mt-16">
+            <header className="hidden md:flex h-20 w-full shrink-0 items-center px-16 2xl:px-60 mt-10 2xl:mt-16">
                 <Link href="/" className="flex items-center gap-2" prefetch={false}>
                     <MountainIcon />
                     <span className="text-2xl text-primary font-bold">Acme</span>
