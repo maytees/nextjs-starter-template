@@ -1,34 +1,5 @@
 # NextJS Starter Template
 
-### Todo:
-
-- [ ] Landing Page
-    - [x] Hero
-    - [ ] Testimonials
-    - [ ] Pricing
-
-- [ ] Navbar
-
-- [ ] Footer
-
-- [ ] Auth Pages
-
-- [ ] OAuth 
-
-- [ ] Credentials Login
-
-- [ ] Two Factor Auth
-
-- [ ] Magic Link Login
-
-- [ ] OTP Login
-
-- [ ] Stripe Payment
-
-- [ ] Forgot Password
-
-- [ ] Reset Password
-
 ## Why?
 
 I've been building many projects lately (most of which I've given up on), and I've spent 99% of 
@@ -41,9 +12,8 @@ So, I've decided to create a template for myself, using my favorite tools/librar
 - Shadcn UI 
 - Stripe
 - Resend
-- React Email
 - Prisma
-- Postgres DB (external ofc)
+- Postgres DB
 
 ## What sets this apart from the others?
 
