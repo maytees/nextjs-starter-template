@@ -25,8 +25,8 @@ export default async function Component() {
 
     return (
         <>
-            <Sheet>
-                <SheetTrigger asChild className="mx-16 mt-20">
+            <Sheet modal={false}>
+                <SheetTrigger asChild className="mt-20">
                     <Button
                         variant="outline"
                         size="icon"

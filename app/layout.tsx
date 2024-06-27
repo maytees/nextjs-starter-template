@@ -18,7 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // Radix ui sheet breaks when using scroll smooth
+    <html lang="en" className="scroll-auto lg:scroll-smooth">
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
