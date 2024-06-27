@@ -13,13 +13,10 @@ import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { signIn } from 'next-auth/react';
 import { register } from '@/actions/register';
-import { useRouter } from 'next/navigation';
 import { registerSchema } from '~/lib/validation';
 import { toast } from "sonner"
 
 const Register = () => {
-    const router = useRouter();
-
     const form = useForm<z.infer<typeof registerSchema>>({
         resolver: zodResolver(registerSchema),
         defaultValues: {
@@ -27,8 +24,8 @@ const Register = () => {
         }
     });
 
-    async function onSubmit({ email, username }: z.infer<typeof registerSchema>) {
-        const registerRes = await register({ email, username });
+    async function onSubmit({ email, name }: z.infer<typeof registerSchema>) {
+        const registerRes = await register({ email, name });
 
         if (registerRes.success) {
             const res = await signIn("resend", {
@@ -57,7 +54,7 @@ const Register = () => {
                         <div className='space-y-2'>
                             <FormField
                                 control={form.control}
-                                name="username"
+                                name="name"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Username</FormLabel>

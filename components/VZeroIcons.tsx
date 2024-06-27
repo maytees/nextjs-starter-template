@@ -1,11 +1,11 @@
 import React from "react";
 
-export function RocketIcon() {
+export function RocketIcon(props: any) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -21,12 +21,12 @@ export function RocketIcon() {
     )
 }
 
-export function LogInIcon() {
+export function LogInIcon(props: any) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -42,12 +42,12 @@ export function LogInIcon() {
 }
 
 
-export function LogOutIcon() {
+export function LogOutIcon(props: any) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -63,12 +63,12 @@ export function LogOutIcon() {
 }
 
 
-export function MountainIcon() {
+export function MountainIcon(props: any) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -82,12 +82,12 @@ export function MountainIcon() {
 }
 
 
-export function SettingsIcon() {
+export function SettingsIcon(props: any) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -102,12 +102,12 @@ export function SettingsIcon() {
 }
 
 
-export function UserIcon() {
+export function UserIcon(props: any) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

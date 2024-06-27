@@ -1,9 +1,6 @@
 import NextAuth from "next-auth";
-import GitHub from "next-auth/providers/github";
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { db } from "./db"
-import Resend from "next-auth/providers/resend";
-import { env } from "@/lib/env";
 import authConfig from "./auth.config";
 
 export const { handlers: { GET, POST }, signIn, signOut, auth } = NextAuth({
@@ -11,9 +8,13 @@ export const { handlers: { GET, POST }, signIn, signOut, auth } = NextAuth({
     pages: {
         newUser: "/auth/setup",
         signIn: "/auth/signin",
+        signOut: "/auth/logout",
+        verifyRequest: "/auth/verify-request",
+        error: "/auth/error"
     },
     session: {
         strategy: "jwt"
     },
+
     ...authConfig
 });

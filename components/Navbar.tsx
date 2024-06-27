@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "./ui/theme-toggle";
-import email from "next-auth/providers/email";
+
 import {
     Menu
 } from "lucide-react";
@@ -18,16 +18,10 @@ import {
     SettingsIcon,
     UserIcon
 } from "./VZeroIcons";
-
-type TempSession = {
-    user: {
-        name: "John Doe",
-        email: "5vCQx@example.com",
-    }
-} | null;
+import { auth } from "@/server/auth";
 
 export default async function Component() {
-    let session: TempSession = null;
+    let session = await auth();
 
     return (
         <>
@@ -79,7 +73,7 @@ export default async function Component() {
                             Pricing
                         </Link>
                     </nav>
-                    {/* {session &&
+                    {session &&
                         <div className="flex flex-col gap-8">
                             <Separator />
                             <div className="flex flex-col gap-3">
@@ -103,13 +97,13 @@ export default async function Component() {
                             <Separator />
                             <div className="flex flex-row-reverse gap-2 w-full items-center justify-end">
                                 <div className="flex flex-col">
-                                    <h1 className="text-left">{session.user.name}</h1>
-                                    <h2 className="text-left text-muted-foreground">{session.user.email}</h2>
+                                    <h1 className="text-left font-semibold">{session?.user?.name}</h1>
+                                    <h2 className="text-left text-muted-foreground">{session?.user?.email}</h2>
                                 </div>
-                                <Image src="/placeholder.png" width="72" height="72" className="rounded-full" alt="Avatar" />
+                                <Image src={session?.user?.image} width="82" height="82" className="rounded-full" alt="Avatar" />
                             </div>
                         </div>
-                    } */}
+                    }
                     {!session && <div className="gap-5 flex flex-col">
                         <Separator className="mb-5" />
                         <Button href="/api/auth/signin" variant="outline">
@@ -121,12 +115,12 @@ export default async function Component() {
                     </div>}
                 </SheetContent>
             </Sheet>
-            <header className="hidden md:flex h-20 w-full shrink-0 items-center px-16 2xl:px-60 mt-10 2xl:mt-16">
+            <header className="hidden lg:flex h-20 w-full shrink-0 items-center px-16 2xl:px-60 mt-10 2xl:mt-16">
                 <Link href="/" className="flex items-center gap-2" prefetch={false}>
                     <MountainIcon />
                     <span className="text-2xl text-primary font-bold">Acme</span>
                 </Link>
-                <nav className="ml-10 gap-10 text-md text-foreground font-medium flex">
+                <nav className="ml-10 gap-5 text-md text-foreground font-medium flex">
                     <Link href="/" className="hover:opacity-50 transition-opacity ease-in-out duration-100" prefetch={false}>
                         Home
                     </Link>
@@ -143,49 +137,49 @@ export default async function Component() {
                         Pricing
                     </Link>
                 </nav>
-                {/* {session &&
+                {session &&
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <div className="flex flex-row gap-4 ml-auto rounded-full hover:cursor-pointer">
                                 <div className="">
-                                    <h1 className="text-right text-sm">{session.user.name}</h1>
-                                    <h2 className="text-right text-sm text-muted-foreground">{session.user.email}</h2>
+                                    <h1 className="text-right text-sm font-bold">{session?.user?.name}</h1>
+                                    <h2 className="text-right text-sm text-muted-foreground">{session?.user?.email}</h2>
                                 </div>
-                                <Button variant="ghost" size="icon" className="ml-auto rounded-full">
-                                    <Image src="/placeholder.png" width="82" height="82" className="rounded-full" alt="Avatar" />
+                                <div className="flex-shrink-0">
+                                    <Image src={session?.user?.image} width="44" height="44" className="rounded-full" alt="Avatar" />
                                     <span className="sr-only">Toggle user menu</span>
-                                </Button>
+                                </div>
                             </div>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="w-56">
+                        <DropdownMenuContent align="end" className="w-48">
                             <DropdownMenuItem>
-                                <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                                    <SettingsIcon className="h-4 w-4" />
+                                <Link href="#" className="flex items-center gap-2 h-full w-full" prefetch={false}>
+                                    <SettingsIcon />
                                     Settings
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                                <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                                    <UserIcon className="h-4 w-4" />
+                                <Link href="#" className="flex items-center gap-2 h-full w-full" prefetch={false}>
+                                    <UserIcon />
                                     Profile
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                                <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                                    <RocketIcon className="h-4 w-4" />
+                                <Link href="#" className="flex items-center gap-2 h-full w-full" prefetch={false}>
+                                    <RocketIcon />
                                     Plan
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem>
-                                <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                                    <LogOutIcon className="h-4 w-4" />
+                                <Link href="/auth/logout" className="flex items-center gap-2 w-full h-full" prefetch={false}>
+                                    <LogOutIcon />
                                     Logout
                                 </Link>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
-                } */}
+                }
                 {
                     !session &&
                     <div className="ml-auto flex flex-row gap-x-5">

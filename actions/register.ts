@@ -20,14 +20,14 @@ export async function register(values: z.infer<typeof registerSchema>) {
 
     const {
         email,
-        username
+        name
     } = fields.data;
 
     const userExists = await db.user.findFirst({
         where: {
             OR: [
                 { email },
-                { username }
+                { name }
             ]
         }
     });
@@ -39,17 +39,19 @@ export async function register(values: z.infer<typeof registerSchema>) {
             }
         }
 
-        if (userExists.username === username) {
+        if (userExists.name === name) {
             return {
                 error: "Username already exists",
             }
         }
     }
 
+    const avatar = `https://avatar.iran.liara.run/public/${Math.ceil(Math.random() * 100) + 1}`
     await db.user.create({
         data: {
             email,
-            username
+            name,
+            image: avatar
         }
     });
 
