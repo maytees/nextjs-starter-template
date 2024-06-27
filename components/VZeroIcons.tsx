@@ -63,12 +63,12 @@ export function LogOutIcon(props: any) {
 }
 
 
-export function MountainIcon(props: any) {
+export function MountainIcon(props: { size?: number }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width={"16" || props.size}
+            height={"16" || props.size}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

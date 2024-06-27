@@ -7,13 +7,14 @@ import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "./ui/theme-toggle";
 
 import {
-    Menu
+    Menu,
+    MountainSnowIcon,
+    MountainIcon
 } from "lucide-react";
 
 import {
     LogInIcon,
     LogOutIcon,
-    MountainIcon,
     RocketIcon,
     SettingsIcon,
     UserIcon
@@ -26,24 +27,29 @@ export default async function Component() {
     return (
         <>
             <Sheet modal={false}>
-                <SheetTrigger asChild className="mt-20">
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        className="shrink-0 lg:hidden"
-                    >
-                        <Menu className="h-5 w-5" />
-                        <span className="sr-only">Toggle navigation menu</span>
-                    </Button>
+                <SheetTrigger asChild className="flex lg:hidden mt-20 w-full">
+                    <div className="flex flex-row justify-between">
+                        <div className="flex flex-row gap-2 items-center">
+                            <MountainIcon size={24} />
+                            <span className="text-2xl text-primary font-bold">Acme</span>
+                        </div>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            className="shrink-0 lg:hidden"
+                        >
+                            <Menu className="h-5 w-5" />
+                            <span className="sr-only">Toggle navigation menu</span>
+                        </Button>
+                    </div>
                 </SheetTrigger>
                 <SheetContent side="left" className="h-screen flex flex-col justify-between">
                     <nav className="grid gap-6 text-lg font-medium">
                         <Link
                             href="/"
-                            className="flex items-center gap-2 text-lg font-semibold"
+                            className="flex flex-row items-center gap-2 text-lg font-semibold"
                         >
-                            <Image src="Acme.svg" width="32" height="32" alt="Acme" />
-                            <span className="sr-only">Acme</span>
+                            <MountainIcon />
                         </Link>
                         <Link href="/" className="hover:text-foreground">
                             Home
@@ -100,7 +106,7 @@ export default async function Component() {
                                     <h1 className="text-left font-semibold">{session?.user?.name}</h1>
                                     <h2 className="text-left text-muted-foreground">{session?.user?.email}</h2>
                                 </div>
-                                <Image src={session?.user?.image} width="82" height="82" className="rounded-full" alt="Avatar" />
+                                <Image src={session?.user?.image} width="62" height="62" className="rounded-full" alt="Avatar" />
                             </div>
                         </div>
                     }
