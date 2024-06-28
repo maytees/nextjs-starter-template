@@ -9,3 +9,9 @@ export const registerSchema = z.object({
     name: z.string().min(3, { message: "Username must be at least 3 characters long!" })
         .refine(s => !s.includes(" "), { message: "Username cannot contain spaces" }),
 });
+
+// Settings
+
+export const ThemeSetting = z.object({
+    theme: z.enum(["light", "dark", "system"])
+});

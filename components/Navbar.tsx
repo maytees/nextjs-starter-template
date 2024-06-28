@@ -85,7 +85,7 @@ export default async function Component() {
                         <div className="flex flex-col gap-8">
                             <Separator />
                             <div className="flex flex-col gap-3">
-                                <Button className="gap-2 justify-start pl-auto" variant="outline">
+                                <Button href="/settings" className="gap-2 justify-start pl-auto" variant="outline">
                                     <SettingsIcon />
                                     <span>Settings</span>
                                 </Button>
@@ -162,7 +162,7 @@ export default async function Component() {
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="w-48">
                             <DropdownMenuItem>
-                                <Link href="#" className="flex items-center gap-2 h-full w-full" prefetch={false}>
+                                <Link href="/settings" className="flex items-center gap-2 h-full w-full" prefetch={false}>
                                     <SettingsIcon />
                                     Settings
                                 </Link>
