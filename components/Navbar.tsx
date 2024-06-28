@@ -1,15 +1,16 @@
 import Link from "next/link"
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuGroup, DropdownMenuSub, DropdownMenuSubTrigger, DropdownMenuPortal, DropdownMenuSubContent, DropdownMenuRadioItem, DropdownMenuRadioGroup, DropdownMenuLabel } from "@/components/ui/dropdown-menu"
 import { Button } from "./ui/button"
 import Image from "next/image"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
-import { ModeToggle } from "./ui/theme-toggle";
+import { ModeToggle, ModeToggle2 } from "./ui/theme-toggle";
 
 import {
     Menu,
     MountainSnowIcon,
-    MountainIcon
+    MountainIcon,
+    MoonIcon
 } from "lucide-react";
 
 import {
@@ -20,9 +21,10 @@ import {
     UserIcon
 } from "./VZeroIcons";
 import { auth } from "@/server/auth";
+import DropdownThemeSelect from "./ui/dropdownThemeSelect";
 
 export default async function Component() {
-    let session = await auth();
+    const session = await auth();
 
     return (
         <>
@@ -95,6 +97,7 @@ export default async function Component() {
                                     <RocketIcon />
                                     <span>Plan</span>
                                 </Button>
+                                <ModeToggle2 />
                                 <Button href="/api/auth/signout" className="gap-2 justify-start pl-auto" variant="destructive">
                                     <LogOutIcon />
                                     <span>Log out</span>
@@ -106,7 +109,7 @@ export default async function Component() {
                                     <h1 className="text-left font-semibold">{session?.user?.name}</h1>
                                     <h2 className="text-left text-muted-foreground">{session?.user?.email}</h2>
                                 </div>
-                                <Image src={session?.user?.image} width="62" height="62" className="rounded-full" alt="Avatar" />
+                                <Image src={session?.user?.image || "https://avatar.iran.liara.run/public/31"} width="62" height="62" className="rounded-full" alt="Avatar" />
                             </div>
                         </div>
                     }
@@ -152,7 +155,7 @@ export default async function Component() {
                                     <h2 className="text-right text-sm text-muted-foreground">{session?.user?.email}</h2>
                                 </div>
                                 <div className="flex-shrink-0">
-                                    <Image src={session?.user?.image} width="44" height="44" className="rounded-full" alt="Avatar" />
+                                    <Image src={session?.user?.image || "https://avatar.iran.liara.run/public/31"} width="44" height="44" className="rounded-full" alt="Avatar" />
                                     <span className="sr-only">Toggle user menu</span>
                                 </div>
                             </div>
@@ -176,6 +179,7 @@ export default async function Component() {
                                     Plan
                                 </Link>
                             </DropdownMenuItem>
+                            <DropdownThemeSelect />
                             <DropdownMenuSeparator />
                             <DropdownMenuItem>
                                 <Link href="/auth/logout" className="flex items-center gap-2 w-full h-full" prefetch={false}>
