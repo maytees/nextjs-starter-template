@@ -4,55 +4,55 @@ import GitHub from "next-auth/providers/github";
 import Resend from "next-auth/providers/resend";
 
 export default {
-    providers: [GitHub, Resend({
-        from: env.EMAIL_FROM,
-        server: env.EMAIL_SERVER_HOST,
-        sendVerificationRequest(params) {
-            return sendVerificationRequest(params)
-        },
-    })]
+  providers: [GitHub, Resend({
+    from: env.EMAIL_FROM,
+    server: env.EMAIL_SERVER_HOST,
+    sendVerificationRequest(params) {
+      return sendVerificationRequest(params)
+    },
+  })]
 } satisfies NextAuthConfig;
 
 export async function sendVerificationRequest(params: any) {
-    const { identifier: to, provider, url, theme } = params
-    const { host } = new URL(url)
-    const res = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-            Authorization: `Bearer ${provider.apiKey}`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            from: provider.from,
-            to,
-            subject: `Sign in to ${host}`,
-            html: html({ url, host }),
-            text: text({ url, host }),
-        }),
-    })
+  const { identifier: to, provider, url, theme } = params
+  const { host } = new URL(url)
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${provider.apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: provider.from,
+      to,
+      subject: `Sign in to ${host}`,
+      html: html({ url, host }),
+      text: text({ url, host }),
+    }),
+  })
 
-    if (!res.ok)
-        throw new Error("Resend error: " + JSON.stringify(await res.json()))
+  if (!res.ok)
+    throw new Error("Resend error: " + JSON.stringify(await res.json()))
 }
 
 function html(params: { url: string; host: string }) {
-    const { url, host } = params
+  const { url, host } = params
 
-    const escapedHost = host.replace(/\./g, "&#8203;.")
+  const escapedHost = host.replace(/\./g, "&#8203;.")
 
-    const brandColor = "#346df1"
-    const color = {
-        background: "#FFFFFF",
-        text: "#444",
-        mainBackground: "#fff",
-        buttonBackground: "#18181b",
-        buttonBorder: "#18181b",
-        buttonText: "#fff",
-        borderColor: "#e2e8f0",
-    }
-    const name = "NextJS Starter";
+  const brandColor = "#346df1"
+  const color = {
+    background: "#FFFFFF",
+    text: "#444",
+    mainBackground: "#fff",
+    buttonBackground: "#18181b",
+    buttonBorder: "#18181b",
+    buttonText: "#fff",
+    borderColor: "#e2e8f0",
+  }
+  const name = "NextJS Starter";
 
-    return `
+  return `
   <body style="background: ${color.background}; padding-top: 50px; padding-bottom: 100px;">
     <table width="100%" border="0" cellspacing="20" cellpadding="0"
       style="background: ${color.mainBackground}; max-width: 600px; margin: auto; border-radius: 10px; border: 1px solid black; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);">
@@ -94,5 +94,5 @@ function html(params: { url: string; host: string }) {
 
 // Email Text body (fallback for email clients that don't render HTML, e.g. feature phones)
 function text({ url, host }: { url: string; host: string }) {
-    return `Sign in to ${host}\n${url}\n\n`
+  return `Sign in to ${host}\n${url}\n\n`
 }

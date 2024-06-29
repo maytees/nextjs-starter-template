@@ -1,10 +1,7 @@
 "use client"
-import { Triangle } from 'react-loader-spinner';
-import { SettingCard } from '@/components/settings/setting';
 import { SelectGroup, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes';
-import { LetterCaseCapitalizeIcon } from '@radix-ui/react-icons';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormField, FormItem, FormLabel, FormControl } from '@/components/ui/form';

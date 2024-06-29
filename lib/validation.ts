@@ -15,3 +15,11 @@ export const registerSchema = z.object({
 export const ThemeSetting = z.object({
     theme: z.enum(["light", "dark", "system"])
 });
+
+export const deleteAccountSchema = z.object({
+    agree: z.boolean().refine(b => b, { message: "You must agree to the terms and conditions" })
+});
+
+export const changeUsernameSchema = z.object({
+    name: z.string().min(3, { message: "Username must be at least 3 characters long!" }).refine(s => !s.includes(" "), { message: "Username cannot contain spaces" })
+});
